@@ -1,0 +1,11 @@
+def operate_on_set():
+    initial_set = {'c', 'd'}
+    vowels = {'a', 'e', 'i', 'o', 'u', 'y'}
+        updated_set = initial_set.union(vowels)
+    try:
+        result = updated_set # Тут можна було б виконати операцію над множиною, якщо б вона була задана
+        print("Результат операції над множиною:", result)
+    except AttributeError:
+        result = list(updated_set)
+        print("Множина не підтримує задану операцію. Результат у вигляді множини:", set(result))
+operate_on_set()
