@@ -1,0 +1,25 @@
+def split_list(input_list, split_index):
+    if split_index < 0 or split_index >= len(input_list):
+        print("Некоректний індекс для розбиття.")
+        return None, None
+
+    first_part = input_list[:split_index + 1]
+    second_part = input_list[split_index + 1:]
+
+    return first_part, second_part
+try:
+    input_list = input("Введіть елементи списку, розділені пробілами: ").split()
+    input_list = [int(element) for element in input_list]  
+except ValueError:
+    print("Неправильний формат введених даних. Введіть цілі числа, розділені пробілами.")
+    exit()
+try:
+    split_index = int(input("Введіть порядковий номер елемента для розбиття: "))
+except ValueError:
+    print("Неправильний формат введених даних. Введіть ціле число.")
+    exit()
+
+first_part, second_part = split_list(input_list, split_index)
+if first_part is not None and second_part is not None:
+    print("Перший список:", first_part)
+    print("Другий список:", second_part)
